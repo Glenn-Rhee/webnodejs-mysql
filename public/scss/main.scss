@@ -1,0 +1,82 @@
+// font
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&display=swap");
+body {
+  background-color: rgb(64, 64, 34);
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+$primary-color-text: #808080;
+$secondary-color-text: #212529;
+$hover: white;
+
+@mixin flexItem($content: center, $align: start) {
+  display: flex;
+  justify-content: $content;
+  align-items: $align;
+}
+
+
+// Navbar
+.navbar {
+  @include flexItem(space-around, center);
+  padding: 20px 0;
+  background-color: transparent;
+  .container-brand {
+    font-size: 1.7em;
+    a {
+      color: $primary-color-text;
+      &:hover {
+        color: $hover;
+      }
+    }
+  }
+  ul {
+    @include flexItem(space-evenly);
+    width: 40%;
+    padding: 10px;
+    // background-color: salmon;
+    li {
+      a {
+        font-size: 1.2;
+        color: $primary-color-text;
+        transition: all 0.2s;
+        &:hover::after {
+          content: "";
+          display: block;
+          border: 1px solid white;
+          width: 50%;
+          margin: auto;
+        }
+
+        &:hover {
+          color: $hover;
+        }
+      }
+    }
+  }
+
+  .menu-toggle {
+    display: none;
+  }
+}
+
+@media screen and (min-width:768px) {
+  .navbar{
+    display: block;
+  }
+}
