@@ -313,7 +313,7 @@ a {
   align-items: center;
   height: 100vh;
   width: 100vw;
-  background-color: rgb(190, 185, 171);
+  background-color: rgb(207, 194, 157);
 }
 .container-contact .body-contact {
   width: 80%;
@@ -324,8 +324,9 @@ a {
 }
 .container-contact .body-contact .title {
   font-size: 2em;
+  margin-top: 30px;
   padding: 30px 0;
-  width: 40%;
+  width: 50%;
   text-align: center;
 }
 .container-contact .body-contact .title h4 {
@@ -338,22 +339,24 @@ a {
   margin: auto;
   margin-top: 5px;
   border: 2px solid rgb(207, 83, 49);
+  background-color: rgb(207, 83, 49);
 }
 .container-contact .body-contact .subtitle {
   font-size: 1.1em;
-  width: 40%;
+  width: 50%;
   text-align: center;
   color: #515960;
+  margin: 20px 0;
 }
 .container-contact .body-contact .main-contact {
-  width: 40%;
+  width: 50%;
 }
 .container-contact .body-contact .main-contact .input-group {
   width: 100%;
   margin-top: 10px;
 }
 .container-contact .body-contact .main-contact .input-group input {
-  height: 40px;
+  height: 50px;
 }
 .container-contact .body-contact .main-contact .input-group input:focus {
   border: 0;
@@ -378,6 +381,7 @@ a {
 .container-contact .body-contact .main-contact .submit-button {
   width: 100%;
   display: flex;
+  margin-top: 10px;
   padding: 1px;
 }
 .container-contact .body-contact .main-contact .submit-button button {
@@ -387,7 +391,7 @@ a {
   background-color: #f95d31;
   border: none;
   border-radius: 30px;
-  font-size: 1.1em;
+  font-size: 1.3em;
   cursor: pointer;
 }
 .container-contact .body-contact .main-contact .submit-button button:hover {
@@ -476,7 +480,7 @@ a {
   .navbar .menu-toggle.trigger span:nth-child(1) {
     transform-origin: 0 0;
     transform: rotate(45deg);
-    margin-bottom: 4.5px;
+    margin-bottom: 4.2px;
   }
   .navbar .menu-toggle.trigger span:nth-child(2) {
     opacity: 0;
@@ -484,7 +488,7 @@ a {
   .navbar .menu-toggle.trigger span:nth-child(3) {
     transform-origin: 0 100%;
     transform: rotate(-45deg);
-    margin-top: 2.5px;
+    margin-top: 2.6px;
   }
   .container-main {
     background-position-x: center;
@@ -528,6 +532,34 @@ a {
   }
   .container-portfolio {
     grid-template-columns: repeat(2, minmax(200px, 2fr));
+  }
+  .container-contact {
+    height: 100vh;
+    width: 100vw;
+  }
+  .container-contact .body-contact {
+    width: 85%;
+  }
+  .container-contact .body-contact .title {
+    font-size: 2.1em;
+    width: 85%;
+  }
+  .container-contact .body-contact .subtitle {
+    width: 85%;
+    font-size: 1.3em;
+  }
+  .container-contact .body-contact .main-contact {
+    width: 85%;
+  }
+  .container-contact .body-contact .main-contact .input-group input {
+    height: 60px;
+  }
+  .container-contact .body-contact .main-contact .input-group input,
+  .container-contact .body-contact .main-contact .input-group textarea {
+    font-size: 1.3em;
+  }
+  .container-contact .body-contact .main-contact .submit-button button {
+    height: 60px;
   }
 }
 @media screen and (max-width: 576px) {
@@ -582,7 +614,6 @@ a {
   }
   .navbar .menu-toggle span {
     width: 40px;
-    background-color: rgb(195, 195, 194);
     height: 4px;
     padding: 0;
     transition: 0.5s;
@@ -673,6 +704,36 @@ a {
     grid-template-rows: repeat(6, minmax(200px, 2fr));
     padding-bottom: 15vh;
     height: 150%;
+  }
+  .container-contact {
+    height: 100%;
+    width: 100%;
+  }
+  .container-contact .body-contact {
+    margin-top: 10vh;
+    width: 90%;
+    margin-bottom: 10vh;
+  }
+  .container-contact .body-contact .title {
+    font-size: 1.8em;
+    width: 90%;
+  }
+  .container-contact .body-contact .subtitle {
+    width: 90%;
+    font-size: 1em;
+  }
+  .container-contact .body-contact .main-contact {
+    width: 90%;
+  }
+  .container-contact .body-contact .main-contact .input-group input {
+    height: 50px;
+  }
+  .container-contact .body-contact .main-contact .input-group input,
+  .container-contact .body-contact .main-contact .input-group textarea {
+    font-size: 0.9em;
+  }
+  .container-contact .body-contact .main-contact .submit-button button {
+    height: 45px;
   }
 }
 @media (max-height: 570px) {
@@ -765,5 +826,20 @@ a {
   }
   .container-portfolio .content-img:nth-child(1) {
     margin-top: 10px;
+  }
+  .container-contact .body-contact {
+    margin-top: 20vh;
+  }
+  .container-contact .body-contact .title {
+    padding: 1px;
+    width: 95%;
+    font-size: 1.3em;
+  }
+  .container-contact .body-contact .subtitle {
+    width: 95%;
+    font-size: 0.9em;
+  }
+  .container-contact .body-contact .main-contact {
+    width: 95%;
   }
 }/*# sourceMappingURL=main.css.map */

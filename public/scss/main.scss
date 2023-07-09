@@ -105,17 +105,11 @@ $shadow-text: 1px 1px 2px rgba(0, 0, 0, 0.8);
   background-image: url(../assets/img/portfolio/thumbnails/#{$pict}.jpg);
 }
 
-@mixin inputFocus(){
+@mixin inputFocus() {
   border: 0;
   box-shadow: 0 0 2px 1px rgba(255, 72, 72, 0.395);
   outline: rgb(253, 175, 175);
 }
-
-// @mixin positions(){
-//   position: absolute;
-//   top: 0;
-
-// }
 
 // Animasi
 @keyframes slider {
@@ -415,7 +409,7 @@ $shadow-text: 1px 1px 2px rgba(0, 0, 0, 0.8);
   height: 100vh;
   width: 100vw;
   // background-color: $secondary-color-text;
-  background-color: rgb(190, 185, 171);
+  background-color: rgb(207, 194, 157);
 
   .body-contact {
     width: 80%;
@@ -424,8 +418,9 @@ $shadow-text: 1px 1px 2px rgba(0, 0, 0, 0.8);
 
     .title {
       font-size: 2em;
+      margin-top: 30px;
       padding: 30px 0;
-      width: 40%;
+      width: 50%;
       text-align: center;
 
       h4 {
@@ -439,25 +434,27 @@ $shadow-text: 1px 1px 2px rgba(0, 0, 0, 0.8);
         margin: auto;
         margin-top: 5px;
         border: 2px solid $bg-btn;
+        background-color: $bg-btn;
       }
     }
 
     .subtitle {
       font-size: 1.1em;
-      width: 40%;
+      width: 50%;
       text-align: center;
       color: #515960;
+      margin: 20px 0;
     }
 
     .main-contact {
-      width: 40%;
+      width: 50%;
 
       .input-group {
         width: 100%;
         margin-top: 10px;
 
         input {
-          height: 40px;
+          height: 50px;
 
           &:focus {
             @include inputFocus();
@@ -485,6 +482,7 @@ $shadow-text: 1px 1px 2px rgba(0, 0, 0, 0.8);
       .submit-button {
         width: 100%;
         display: flex;
+        margin-top: 10px;
         padding: 1px;
 
         button {
@@ -494,7 +492,7 @@ $shadow-text: 1px 1px 2px rgba(0, 0, 0, 0.8);
           background-color: #f95d31;
           border: none;
           border-radius: 30px;
-          font-size: 1.1em;
+          font-size: 1.3em;
           cursor: pointer;
 
           &:hover {
@@ -577,7 +575,7 @@ $shadow-text: 1px 1px 2px rgba(0, 0, 0, 0.8);
         span:nth-child(1) {
           transform-origin: 0 0;
           transform: rotate(45deg);
-          margin-bottom: 4.5px;
+          margin-bottom: 4.2px;
         }
 
         span:nth-child(2) {
@@ -586,7 +584,7 @@ $shadow-text: 1px 1px 2px rgba(0, 0, 0, 0.8);
         span:nth-child(3) {
           transform-origin: 0 100%;
           transform: rotate(-45deg);
-          margin-top: 2.5px;
+          margin-top: 2.6px;
         }
       }
     }
@@ -658,6 +656,47 @@ $shadow-text: 1px 1px 2px rgba(0, 0, 0, 0.8);
   .container-portfolio {
     grid-template-columns: repeat(2, minmax(200px, 2fr));
   }
+
+  // Contact
+  .container-contact {
+    height: 100vh;
+    width: 100vw;
+
+    .body-contact {
+      width: 85%;
+
+      .title {
+        font-size: 2.1em;
+        width: 85%;
+      }
+
+      .subtitle {
+        width: 85%;
+        font-size: 1.3em;
+      }
+
+      .main-contact {
+        width: 85%;
+
+        .input-group {
+          input {
+            height: 60px;
+          }
+
+          input,
+          textarea {
+            font-size: 1.3em;
+          }
+        }
+
+        .submit-button {
+          button {
+            height: 60px;
+          }
+        }
+      }
+    }
+  }
 }
 
 // Smartphone kekinian
@@ -698,7 +737,6 @@ $shadow-text: 1px 1px 2px rgba(0, 0, 0, 0.8);
       // background-color: salmon;
       span {
         width: 40px;
-        background-color: rgb(195, 195, 194);
         height: 4px;
         padding: 0;
         transition: 0.5s;
@@ -816,6 +854,50 @@ $shadow-text: 1px 1px 2px rgba(0, 0, 0, 0.8);
     grid-template-rows: repeat(6, minmax(200px, 2fr));
     padding-bottom: 15vh;
     height: 150%;
+  }
+
+  // Contact
+  .container-contact {
+    height: 100%;
+    width: 100%;
+
+    .body-contact {
+      margin-top: 10vh;
+      width: 90%;
+      margin-bottom: 10vh;
+
+      .title {
+        font-size: 1.8em;
+        width: 90%;
+      }
+
+      .subtitle {
+        width: 90%;
+        font-size: 1em;
+      }
+
+      .main-contact {
+        width: 90%;
+
+        .input-group{
+          input {
+            height: 50px;
+          }
+  
+          input,
+          textarea {
+            font-size: .9em;
+          }
+        }
+
+        .submit-button {
+          button {
+            height: 45px;
+          }
+        }
+
+      }
+    }
   }
 }
 
@@ -941,6 +1023,27 @@ $shadow-text: 1px 1px 2px rgba(0, 0, 0, 0.8);
 
       &:nth-child(1) {
         margin-top: 10px;
+      }
+    }
+  }
+
+  // Contact
+  .container-contact {
+    .body-contact {
+      margin-top: 20vh;
+      .title {
+        padding: 1px;
+        width: 95%;
+        font-size: 1.3em;
+      }
+
+      .subtitle {
+        width: 95%;
+        font-size: 0.9em;
+      }
+
+      .main-contact {
+        width: 95%;
       }
     }
   }
