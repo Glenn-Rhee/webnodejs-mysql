@@ -53,11 +53,12 @@ a {
   right: 0;
   left: 0;
   z-index: 4;
-  padding: 20px 0;
+  padding: 25px 0;
   background-color: transparent;
 }
 .navbar .container-brand {
   font-size: 1.8em;
+  padding: 10px 0;
 }
 .navbar .container-brand a {
   color: white;
@@ -71,7 +72,9 @@ a {
   justify-content: space-evenly;
   align-items: start;
   width: 40%;
-  padding: 10px;
+}
+.navbar ul li {
+  margin: 20px 0;
 }
 .navbar ul li a {
   font-size: 1.2;
@@ -211,7 +214,6 @@ a {
     border: 1px solid rgb(236, 154, 0);
     width: 50%;
     margin: auto;
-    margin-top: 5px;
   }
   ul li a:hover {
     color: rgb(236, 154, 0);
@@ -222,7 +224,6 @@ a {
     border: 1px solid rgb(236, 154, 0);
     width: 50%;
     margin: auto;
-    margin-top: 5px;
   }
 }
 @media screen and (max-width: 992px) {
