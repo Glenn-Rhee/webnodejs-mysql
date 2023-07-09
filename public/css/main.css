@@ -311,12 +311,13 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
   background-color: rgb(207, 194, 157);
 }
 .container-contact .body-contact {
   width: 80%;
+  margin: 30px 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -324,8 +325,8 @@ a {
 }
 .container-contact .body-contact .title {
   font-size: 2em;
-  margin-top: 30px;
-  padding: 30px 0;
+  margin-top: 50px;
+  padding: 20px 0;
   width: 50%;
   text-align: center;
 }
@@ -350,6 +351,23 @@ a {
 }
 .container-contact .body-contact .main-contact {
   width: 50%;
+}
+.container-contact .body-contact .main-contact .form-error {
+  width: 100%;
+  background-color: rgba(255, 104, 104, 0.805);
+  padding: 10px;
+  text-align: start;
+  color: white;
+  font-size: 1em;
+}
+.container-contact .body-contact .main-contact .form-succes {
+  color: white;
+  width: 100%;
+  background-color: rgb(143, 218, 29);
+  text-align: center;
+  padding: 10px;
+  font-size: 1.4em;
+  font-weight: 700;
 }
 .container-contact .body-contact .main-contact .input-group {
   width: 100%;
@@ -383,6 +401,7 @@ a {
   display: flex;
   margin-top: 10px;
   padding: 1px;
+  margin-bottom: 20px;
 }
 .container-contact .body-contact .main-contact .submit-button button {
   width: 100%;

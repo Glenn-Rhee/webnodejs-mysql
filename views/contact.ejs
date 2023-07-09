@@ -10,6 +10,20 @@
       </p>
     </div>
     <div class="main-contact">
+      <% if (typeof dataError != "undefined") { %>
+      <div class="form-error">
+        <ul>
+          <% dataError.forEach(error => { %>
+          <li><%= error.msg %></li>
+          <% }) %>
+        </ul>
+      </div>
+      <% } %>
+      <% if(typeof message !== "undefined") {%>
+      <div class="form-succes">
+        <h4><%= message %></h4>
+      </div>
+      <% } %>
       <form action="/contact" method="post" autocomplete="off">
         <div class="input-group">
           <input type="text" name="name" id="name" placeholder="Your Name..." />
@@ -25,7 +39,7 @@
         <div class="input-group">
           <input
             type="tel"
-            name="noTelp"
+            name="phoneNumber"
             id="noTelp"
             placeholder="Phone Number"
           />
