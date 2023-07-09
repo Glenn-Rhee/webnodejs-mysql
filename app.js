@@ -18,6 +18,7 @@ app.get("/", (req,res)=>{
     })
 })
 
+// Home
 app.get("/about", (req,res)=>{
     res.render("about", {
         layout:"layouts/main-layout",
@@ -25,6 +26,13 @@ app.get("/about", (req,res)=>{
     })
 })
 
+// Services
+app.get("/services", (req,res)=>{
+    res.render("services", {
+        layout: "layouts/main-layout",
+        title: "Glenn Rhee's | Services"
+    })
+})
 
 app.use((req,res,next)=>{
     res.status(404).send("Halaman tidak ditemukan");

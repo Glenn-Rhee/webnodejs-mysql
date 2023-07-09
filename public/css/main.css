@@ -1,9 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800&display=swap");
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
+  transform: scale(2.5);
+  color: #f4623a;
+}
+
 body {
   background-color: rgb(71, 55, 55);
   font-family: "Montserrat", sans-serif;
   font-size: 18px;
   overflow-x: hidden !important;
+  scroll-behavior: smooth;
 }
 
 ul {
@@ -205,6 +212,45 @@ a {
 }
 .container-about .main-about .button-about a button:hover {
   background-color: #e6e6e6;
+}
+
+.container-services {
+  height: 70vh;
+  width: 100vw;
+  margin-top: 15vh;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 100px;
+}
+.container-services .header {
+  font-size: 2.5em;
+}
+.container-services .header h4 {
+  font-weight: 500;
+}
+.container-services .body-services {
+  display: grid;
+  width: 80%;
+  gap: 50px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 2fr));
+  text-align: center;
+}
+.container-services .body-services .card {
+  padding: 10px;
+}
+.container-services .body-services .card .title {
+  font-size: 1.7em;
+  margin-top: 12px;
+}
+.container-services .body-services .card .title h5 {
+  font-weight: 500;
+}
+.container-services .body-services .card .main-services {
+  font-size: 0.8em;
+  margin-top: 5px;
 }
 
 @media (min-width: 993px) {
