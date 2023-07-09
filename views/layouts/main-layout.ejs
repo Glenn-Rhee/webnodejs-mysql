@@ -7,8 +7,10 @@
     <title><%= title %></title>
   </head>
   <body>
-    <%- include("navbar") %>
-    <%- body %>
+    <div class="container-all-element">
+      <div class="container-nav"><%- include("navbar") %></div>
+      <div class="container-body"><%- body %></div>
+    </div>
     <script src="js/animate.js"></script>
   </body>
 </html>

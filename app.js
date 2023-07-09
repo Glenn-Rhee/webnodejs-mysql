@@ -12,9 +12,16 @@ app.use(express.urlencoded({ extended: true }));
 
 // 
 app.get("/", (req,res)=>{
-    res.render("Home", {
+    res.render("home", {
         layout:"layouts/main-layout",
         title: "Glenn Rhee's"
+    })
+})
+
+app.get("/coba", (req,res)=>{
+    res.render("login", {
+        layout:"layouts/main-layout",
+        title:"Halaman login"
     })
 })
 
