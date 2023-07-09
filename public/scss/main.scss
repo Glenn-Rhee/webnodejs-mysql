@@ -307,7 +307,7 @@ $shadow-text: 1px 1px 2px rgba(0, 0, 0, 0.8);
     display: grid;
     width: 80%;
     gap: 50px;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 2fr));
+    grid-template-columns: repeat(auto-fit, minmax(150px, 2fr));
     text-align: center;
 
     .card {
@@ -658,6 +658,37 @@ $shadow-text: 1px 1px 2px rgba(0, 0, 0, 0.8);
           }
         }
       }
+    }
+  }
+
+  // Services 
+  .container-services {
+    height: 100%;
+    width: 100%;
+    gap: 0px;
+    margin-top: 0;
+    background-color: rgba(255, 255, 255, 0.889);
+
+    .header {
+      font-size: 1.5em;
+      margin-top: 25vh;
+    }
+
+    .body-services{
+      gap: 10px;
+      align-items: center;
+
+      .card{
+        align-self: center;
+        margin-bottom: 20px;
+        // background-color: salmon;
+
+        .title {
+          font-size: 1.2em;
+          margin-top: 10px;
+        }
+      }
+
     }
   }
 }

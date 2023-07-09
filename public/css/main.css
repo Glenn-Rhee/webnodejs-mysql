@@ -235,7 +235,7 @@ a {
   display: grid;
   width: 80%;
   gap: 50px;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 2fr));
+  grid-template-columns: repeat(auto-fit, minmax(150px, 2fr));
   text-align: center;
 }
 .container-services .body-services .card {
@@ -549,5 +549,28 @@ a {
     border-radius: 20px;
     font-size: 1em;
     font-weight: 700;
+  }
+  .container-services {
+    height: 100%;
+    width: 100%;
+    gap: 0px;
+    margin-top: 0;
+    background-color: rgba(255, 255, 255, 0.889);
+  }
+  .container-services .header {
+    font-size: 1.5em;
+    margin-top: 25vh;
+  }
+  .container-services .body-services {
+    gap: 10px;
+    align-items: center;
+  }
+  .container-services .body-services .card {
+    align-self: center;
+    margin-bottom: 20px;
+  }
+  .container-services .body-services .card .title {
+    font-size: 1.2em;
+    margin-top: 10px;
   }
 }/*# sourceMappingURL=main.css.map */
