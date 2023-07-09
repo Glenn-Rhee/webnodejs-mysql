@@ -69,7 +69,7 @@ a {
 }
 .navbar .container-brand a {
   color: white;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
 }
 .navbar .container-brand a:hover {
   color: rgb(236, 154, 0);
@@ -235,7 +235,7 @@ a {
   display: grid;
   width: 80%;
   gap: 50px;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 2fr));
+  grid-template-columns: repeat(auto-fit, minmax(150px, 2.5fr));
   text-align: center;
 }
 .container-services .body-services .card {
@@ -249,7 +249,8 @@ a {
   font-weight: 500;
 }
 .container-services .body-services .card .main-services {
-  font-size: 0.8em;
+  color: #6c757d;
+  font-size: 0.9em;
   margin-top: 5px;
 }
 
@@ -376,6 +377,15 @@ a {
     padding: 30px 25px;
     border-radius: 50px;
   }
+  .container-services .body-services {
+    grid-template-columns: repeat(2, 2fr);
+  }
+  .container-services .body-services .card {
+    padding: 20px;
+  }
+  .container-services .body-services .card .title {
+    margin-top: 15px;
+  }
 }
 @media screen and (max-width: 576px) {
   .navbar {
@@ -488,6 +498,33 @@ a {
     border-radius: 35px;
     font-size: 1em;
   }
+  .container-services {
+    height: 100%;
+    width: 100%;
+    gap: 50px;
+    margin-top: 0;
+    background-color: rgba(255, 255, 255, 0.889);
+  }
+  .container-services .header {
+    font-size: 1.7em;
+    margin-top: 15vh;
+  }
+  .container-services .body-services {
+    margin-bottom: 50px;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 2.5fr));
+  }
+  .container-services .body-services .card .header-services {
+    margin-top: 20px;
+  }
+  .container-services .body-services .card .header-services h4 {
+    font-weight: 700;
+  }
+  .container-services .body-services .card .title {
+    font-size: 1.4em;
+  }
+  .container-services .body-services .card .title h5 {
+    font-weight: 500;
+  }
 }
 @media (max-height: 570px) {
   .navbar .container-brand {
@@ -498,6 +535,9 @@ a {
   }
   .navbar .container-brand h4 {
     letter-spacing: 2px;
+  }
+  .navbar .menu {
+    margin-top: 20px;
   }
   .navbar .menu li a {
     font-size: 0.8em;
@@ -550,16 +590,9 @@ a {
     font-size: 1em;
     font-weight: 700;
   }
-  .container-services {
-    height: 100%;
-    width: 100%;
-    gap: 0px;
-    margin-top: 0;
-    background-color: rgba(255, 255, 255, 0.889);
-  }
   .container-services .header {
     font-size: 1.5em;
-    margin-top: 25vh;
+    margin-top: 18vh;
   }
   .container-services .body-services {
     gap: 10px;

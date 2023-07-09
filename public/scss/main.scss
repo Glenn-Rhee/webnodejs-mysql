@@ -137,10 +137,9 @@ $shadow-text: 1px 1px 2px rgba(0, 0, 0, 0.8);
   .container-brand {
     font-size: 1.8em;
     padding: 10px 0;
-
     a {
       color: $primary-color-text;
-      text-shadow: 1px 1px 2px rgba($color: #000000, $alpha: 0.5);
+      text-shadow: 1px 1px 5px rgba($color: #000000, $alpha: 0.5);
 
       &:hover {
         color: $hover;
@@ -272,11 +271,10 @@ $shadow-text: 1px 1px 2px rgba(0, 0, 0, 0.8);
 
     .button-about {
       a {
-
         button {
           @include templateBtnDekstop(white, black);
           text-transform: uppercase;
-          
+
           &:hover {
             background-color: darken($color: white, $amount: 10%);
           }
@@ -307,7 +305,7 @@ $shadow-text: 1px 1px 2px rgba(0, 0, 0, 0.8);
     display: grid;
     width: 80%;
     gap: 50px;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 2fr));
+    grid-template-columns: repeat(auto-fit, minmax(150px, 2.5fr));
     text-align: center;
 
     .card {
@@ -323,7 +321,8 @@ $shadow-text: 1px 1px 2px rgba(0, 0, 0, 0.8);
       }
 
       .main-services {
-        font-size: 0.8em;
+        color: #6c757d;
+        font-size: 0.9em;
         margin-top: 5px;
       }
     }
@@ -463,6 +462,20 @@ $shadow-text: 1px 1px 2px rgba(0, 0, 0, 0.8);
       }
     }
   }
+
+  // Services
+  .container-services {
+    .body-services {
+      grid-template-columns: repeat(2, 2fr);
+      .card {
+        padding: 20px;
+
+        .title {
+          margin-top: 15px;
+        }
+      }
+    }
+  }
 }
 
 // Smartphone kekinian
@@ -579,6 +592,42 @@ $shadow-text: 1px 1px 2px rgba(0, 0, 0, 0.8);
       }
     }
   }
+
+  // Services
+  .container-services {
+    height: 100%;
+    width: 100%;
+    gap: 50px;
+    margin-top: 0;
+    background-color: rgba(255, 255, 255, 0.889);
+
+    .header {
+      font-size: 1.7em;
+      margin-top: 15vh;
+    }
+
+    .body-services {
+      margin-bottom: 50px;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 2.5fr));
+
+      .card {
+        .header-services {
+          margin-top: 20px;
+
+          h4 {
+            font-weight: 700;
+          }
+        }
+
+        .title {
+          font-size: 1.4em;
+          h5 {
+            font-weight: 500;
+          }
+        }
+      }
+    }
+  }
 }
 
 // Smartphone Jadul
@@ -596,6 +645,7 @@ $shadow-text: 1px 1px 2px rgba(0, 0, 0, 0.8);
     }
 
     .menu {
+      margin-top: 20px;
       li {
         a {
           font-size: 0.8em;
@@ -661,24 +711,18 @@ $shadow-text: 1px 1px 2px rgba(0, 0, 0, 0.8);
     }
   }
 
-  // Services 
+  // Services
   .container-services {
-    height: 100%;
-    width: 100%;
-    gap: 0px;
-    margin-top: 0;
-    background-color: rgba(255, 255, 255, 0.889);
-
     .header {
       font-size: 1.5em;
-      margin-top: 25vh;
+      margin-top: 18vh;
     }
 
-    .body-services{
+    .body-services {
       gap: 10px;
       align-items: center;
 
-      .card{
+      .card {
         align-self: center;
         margin-bottom: 20px;
         // background-color: salmon;
@@ -688,7 +732,6 @@ $shadow-text: 1px 1px 2px rgba(0, 0, 0, 0.8);
           margin-top: 10px;
         }
       }
-
     }
   }
 }
