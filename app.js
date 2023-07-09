@@ -81,7 +81,7 @@ app.post("/contact", [
                 if(err) {
                     console.log("Gagal ditutup ", err);
                 } else {
-                    console.log("Berhaisl tutup");
+                    console.log("Berhasil tutup");
                 }
             });
         }
