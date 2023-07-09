@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800&display=swap");
 body {
-  background-color: rgb(180, 180, 180);
+  background-color: rgb(182, 182, 182);
   font-family: "Montserrat", sans-serif;
   font-size: 18px;
   overflow-x: hidden !important;
@@ -27,15 +27,15 @@ a {
     opacity: 0;
   }
   100% {
+    transform: translateX(0px);
     display: flex;
-    transform: translateX(0);
     opacity: 1;
   }
 }
 @keyframes closeSlider {
   0% {
+    transform: translateX(0px);
     display: flex;
-    transform: translateX(0);
     opacity: 1;
   }
   100% {
@@ -76,9 +76,20 @@ a {
 .navbar ul li a {
   font-size: 1.2;
   color: white;
-  font-weight: 500;
+  font-weight: 700;
   transition: all 0.2s;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+.navbar ul li a.active {
+  color: rgb(236, 154, 0);
+}
+.navbar ul li a.active::after {
+  content: "";
+  display: block;
+  border: 1px solid rgb(236, 154, 0);
+  width: 50%;
+  margin: auto;
+  margin-top: 5px;
 }
 .navbar .menu-toggle {
   display: none;
@@ -158,13 +169,57 @@ a {
   background-color: rgba(78, 43, 43, 0.542);
 }
 
+.container-about {
+  background-color: rgb(207, 83, 49);
+  height: 60vh;
+  width: 100vw;
+  color: white;
+  margin-top: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container-about .main-about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 80px;
+  width: 60%;
+  text-align: center;
+}
+.container-about .main-about .header-about {
+  font-size: 2.5em;
+  font-weight: 700;
+}
+.container-about .main-about .paragraf-about {
+  font-size: 1.5em;
+  font-weight: 500;
+}
+.container-about .main-about .button-about a button {
+  padding: 20px 35px;
+  border-radius: 35px;
+  background-color: white;
+  border: none;
+  font-size: 1.2em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.5s;
+  color: black;
+  text-transform: uppercase;
+}
+.container-about .main-about .button-about a button:hover {
+  background-color: #cccccc;
+}
+
 @media (min-width: 993px) {
   ul li a:hover::after {
     content: "";
     display: block;
-    border: 1px solid white;
+    border: 1px solid rgb(236, 154, 0);
     width: 50%;
     margin: auto;
+    margin-top: 5px;
   }
   ul li a:hover {
     color: rgb(236, 154, 0);
@@ -259,6 +314,21 @@ a {
   .container-main .main .button button {
     font-size: 1.5em;
   }
+  .container-about .main-about {
+    width: 85%;
+    gap: 50px;
+  }
+  .container-about .main-about .header-about {
+    font-size: 2.7em;
+  }
+  .container-about .main-about .paragraf-about {
+    font-size: 1.3em;
+  }
+  .container-about .main-about .button-about a button {
+    font-size: 1.5em;
+    padding: 30px 25px;
+    border-radius: 50px;
+  }
 }
 @media screen and (max-width: 576px) {
   .navbar {
@@ -268,7 +338,8 @@ a {
     padding: 20px 20px;
   }
   .navbar .container-brand {
-    font-size: 1.4em;
+    font-size: 1.3em;
+    padding: 10px 0px;
   }
   .navbar ul {
     display: none;
@@ -355,12 +426,31 @@ a {
     border-radius: 35px;
     font-size: 1em;
   }
+  .container-about .main-about {
+    gap: 50px;
+    width: 85%;
+  }
+  .container-about .main-about .header-about {
+    font-size: 1.9em;
+  }
+  .container-about .main-about .paragraf-about {
+    font-size: 1em;
+  }
+  .container-about .main-about .button-about a button {
+    padding: 15px 25px;
+    border-radius: 35px;
+    font-size: 1em;
+  }
 }
 @media (max-height: 570px) {
   .navbar .container-brand {
-    font-size: 0.9em;
+    font-size: 1em;
     padding: 5px 2px;
+    text-align: center;
     font-weight: 400;
+  }
+  .navbar .container-brand h4 {
+    letter-spacing: 2px;
   }
   .navbar .menu li a {
     font-size: 0.8em;
@@ -392,7 +482,23 @@ a {
     padding: 5px 5px;
   }
   .container-main .main .button button {
-    padding: 5px 20px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 1em;
+    font-weight: 700;
+  }
+  .container-about .main-about {
+    width: 90%;
+    gap: 20px;
+  }
+  .container-about .main-about .header-about {
+    font-size: 1.4em;
+  }
+  .container-about .main-about .paragraf-about {
+    font-size: 0.7em;
+  }
+  .container-about .main-about .button-about a button {
+    padding: 10px 20px;
     border-radius: 20px;
     font-size: 1em;
     font-weight: 700;

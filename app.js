@@ -18,10 +18,10 @@ app.get("/", (req,res)=>{
     })
 })
 
-app.get("/coba", (req,res)=>{
-    res.render("login", {
+app.get("/about", (req,res)=>{
+    res.render("about", {
         layout:"layouts/main-layout",
-        title:"Halaman login"
+        title:"Glenn Rhee's | About"
     })
 })
 
