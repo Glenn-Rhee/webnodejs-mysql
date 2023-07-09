@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800&display=swap");
 body {
-  background-color: rgb(182, 182, 182);
+  background-color: rgb(71, 55, 55);
   font-family: "Montserrat", sans-serif;
   font-size: 18px;
   overflow-x: hidden !important;
@@ -82,14 +82,6 @@ a {
 }
 .navbar ul li a.active {
   color: rgb(236, 154, 0);
-}
-.navbar ul li a.active::after {
-  content: "";
-  display: block;
-  border: 1px solid rgb(236, 154, 0);
-  width: 50%;
-  margin: auto;
-  margin-top: 5px;
 }
 .navbar .menu-toggle {
   display: none;
@@ -209,7 +201,7 @@ a {
   text-transform: uppercase;
 }
 .container-about .main-about .button-about a button:hover {
-  background-color: #cccccc;
+  background-color: #e6e6e6;
 }
 
 @media (min-width: 993px) {
@@ -223,6 +215,14 @@ a {
   }
   ul li a:hover {
     color: rgb(236, 154, 0);
+  }
+  ul li a.active::after {
+    content: "";
+    display: block;
+    border: 1px solid rgb(236, 154, 0);
+    width: 50%;
+    margin: auto;
+    margin-top: 5px;
   }
 }
 @media screen and (max-width: 992px) {
