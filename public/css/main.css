@@ -307,6 +307,93 @@ a {
   background-image: url(../assets/img/portfolio/thumbnails/6.jpg);
 }
 
+.container-contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgb(190, 185, 171);
+}
+.container-contact .body-contact {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.container-contact .body-contact .title {
+  font-size: 2em;
+  padding: 30px 0;
+  width: 40%;
+  text-align: center;
+}
+.container-contact .body-contact .title h4 {
+  font-weight: 500;
+}
+.container-contact .body-contact .title::after {
+  content: "";
+  display: block;
+  width: 20%;
+  margin: auto;
+  margin-top: 5px;
+  border: 2px solid rgb(207, 83, 49);
+}
+.container-contact .body-contact .subtitle {
+  font-size: 1.1em;
+  width: 40%;
+  text-align: center;
+  color: #515960;
+}
+.container-contact .body-contact .main-contact {
+  width: 40%;
+}
+.container-contact .body-contact .main-contact .input-group {
+  width: 100%;
+  margin-top: 10px;
+}
+.container-contact .body-contact .main-contact .input-group input {
+  height: 40px;
+}
+.container-contact .body-contact .main-contact .input-group input:focus {
+  border: 0;
+  box-shadow: 0 0 2px 1px rgba(255, 72, 72, 0.395);
+  outline: rgb(253, 175, 175);
+}
+.container-contact .body-contact .main-contact .input-group textarea:focus {
+  border: 0;
+  box-shadow: 0 0 2px 1px rgba(255, 72, 72, 0.395);
+  outline: rgb(253, 175, 175);
+}
+.container-contact .body-contact .main-contact .input-group input,
+.container-contact .body-contact .main-contact .input-group textarea {
+  padding: 10px 10px;
+  border-radius: 10px;
+  border: 0;
+  font-size: 0.9em;
+  width: 100%;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
+  font-family: Arial, Helvetica, sans-serif;
+}
+.container-contact .body-contact .main-contact .submit-button {
+  width: 100%;
+  display: flex;
+  padding: 1px;
+}
+.container-contact .body-contact .main-contact .submit-button button {
+  width: 100%;
+  height: 50px;
+  color: #c7c7c7;
+  background-color: #f95d31;
+  border: none;
+  border-radius: 30px;
+  font-size: 1.1em;
+  cursor: pointer;
+}
+.container-contact .body-contact .main-contact .submit-button button:hover {
+  background-color: #bd310b;
+}
+
 @media (min-width: 993px) {
   ul li a:hover::after {
     content: "";

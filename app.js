@@ -42,6 +42,14 @@ app.get("/portfolio", (req, res) => {
     })
 })
 
+// Contact 
+app.get("/contact", (req, res) => {
+    res.render("contact", {
+        layout: "layouts/main-layout",
+        title: "Glenn Rhee's | Contact Us"
+    })
+})
+
 app.use((req, res, next) => {
     res.status(404).send("Halaman tidak ditemukan");
     next();
