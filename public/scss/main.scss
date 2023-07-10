@@ -103,6 +103,8 @@ $shadow-text: 1px 1px 2px rgba(0, 0, 0, 0.8);
 
 @mixin bgPortfo($pict) {
   background-image: url(../assets/img/portfolio/thumbnails/#{$pict}.jpg);
+  background-position: center;
+  background-size: cover;
 }
 
 @mixin inputFocus() {
@@ -403,6 +405,57 @@ $shadow-text: 1px 1px 2px rgba(0, 0, 0, 0.8);
   }
 }
 
+.modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba($color: #000000, $alpha: 0.5);
+  z-index: 999;
+  display: none;
+  transition: 1s;
+
+  .modal-img {
+    position: relative;
+
+    .close-btn {
+      position: absolute;
+      top: 0;
+      right: 0;
+      margin-top: -40px;
+      margin-right: 10px;
+      color: white;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+      cursor: pointer;
+      transform: scale(4.5);
+    }
+  }
+
+  .action {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 30px;
+    transform: scale(4);
+    cursor: pointer;
+
+    &.prev {
+      left: 20vw;
+    }
+
+    &.next {
+      right: 20vw;
+    }
+  }
+
+  &.show-modal {
+    display: grid;
+    @include flexItem(center, center);
+  }
+}
+
 // Contact
 .container-contact {
   @include flexItem(center, center);
@@ -416,7 +469,6 @@ $shadow-text: 1px 1px 2px rgba(0, 0, 0, 0.8);
     margin: 30px 0;
     @include flexItem(center, center);
     flex-direction: column;
-    
 
     .title {
       font-size: 2em;
@@ -451,13 +503,13 @@ $shadow-text: 1px 1px 2px rgba(0, 0, 0, 0.8);
     .main-contact {
       width: 50%;
 
-      .form-error{
+      .form-error {
         width: 100%;
         background-color: rgba(255, 104, 104, 0.805);
         padding: 10px;
         text-align: start;
         color: white;
-        font-size: 1em; 
+        font-size: 1em;
       }
 
       .form-error-fe {
@@ -466,7 +518,7 @@ $shadow-text: 1px 1px 2px rgba(0, 0, 0, 0.8);
         padding: 10px;
         text-align: start;
         color: red;
-        font-size: 1em; 
+        font-size: 1em;
         display: none;
 
         &.error {
@@ -541,7 +593,7 @@ $shadow-text: 1px 1px 2px rgba(0, 0, 0, 0.8);
           }
 
           &.disable {
-            cursor:not-allowed;
+            cursor: not-allowed;
 
             &:hover {
               background-color: #f95d31;
@@ -928,14 +980,14 @@ $shadow-text: 1px 1px 2px rgba(0, 0, 0, 0.8);
       .main-contact {
         width: 90%;
 
-        .input-group{
+        .input-group {
           input {
             height: 50px;
           }
-  
+
           input,
           textarea {
-            font-size: .9em;
+            font-size: 0.9em;
           }
         }
 
@@ -944,7 +996,6 @@ $shadow-text: 1px 1px 2px rgba(0, 0, 0, 0.8);
             height: 45px;
           }
         }
-
       }
     }
   }

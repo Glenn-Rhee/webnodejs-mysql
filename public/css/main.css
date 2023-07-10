@@ -287,24 +287,85 @@ a {
 }
 .container-portfolio .content-img.img-satu {
   background-image: url(../assets/img/portfolio/thumbnails/1.jpg);
+  background-position: center;
+  background-size: cover;
 }
 .container-portfolio .content-img.img-satu {
   background-image: url(../assets/img/portfolio/thumbnails/1.jpg);
+  background-position: center;
+  background-size: cover;
 }
 .container-portfolio .content-img.img-dua {
   background-image: url(../assets/img/portfolio/thumbnails/2.jpg);
+  background-position: center;
+  background-size: cover;
 }
 .container-portfolio .content-img.img-tiga {
   background-image: url(../assets/img/portfolio/thumbnails/3.jpg);
+  background-position: center;
+  background-size: cover;
 }
 .container-portfolio .content-img.img-empat {
   background-image: url(../assets/img/portfolio/thumbnails/4.jpg);
+  background-position: center;
+  background-size: cover;
 }
 .container-portfolio .content-img.img-lima {
   background-image: url(../assets/img/portfolio/thumbnails/5.jpg);
+  background-position: center;
+  background-size: cover;
 }
 .container-portfolio .content-img.img-enam {
   background-image: url(../assets/img/portfolio/thumbnails/6.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  display: none;
+  transition: 1s;
+}
+.modal .modal-img {
+  position: relative;
+}
+.modal .modal-img .close-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: -40px;
+  margin-right: 10px;
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+  cursor: pointer;
+  transform: scale(4.5);
+}
+.modal .action {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #fff;
+  font-size: 30px;
+  transform: scale(4);
+  cursor: pointer;
+}
+.modal .action.prev {
+  left: 20vw;
+}
+.modal .action.next {
+  right: 20vw;
+}
+.modal.show-modal {
+  display: grid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .container-contact {
