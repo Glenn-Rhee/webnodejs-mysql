@@ -8,7 +8,7 @@
 }
 
 body {
-  background-color: rgb(71, 55, 55);
+  background-color: rgb(207, 194, 157);
   font-family: "Montserrat", sans-serif;
   font-size: 18px;
   overflow-x: hidden !important;
@@ -79,7 +79,7 @@ $shadow-text: 1px 1px 2px rgba(0, 0, 0, 0.8);
   background-color: rgba(255, 255, 255, 0.905);
 }
 
-@mixin templateAnimasi($nameAnima) {
+@mixin templateAnimation($nameAnima) {
   animation-name: $nameAnima;
   animation-duration: 0.5s;
   animation-iteration-count: 1;
@@ -458,7 +458,7 @@ $shadow-text: 1px 1px 2px rgba(0, 0, 0, 0.8);
   left: 0;
   right: 0;
   background-color: rgba($color: #000000, $alpha: 0.5);
-  z-index: 999;
+  z-index: 4;
   display: none;
 
   .modal-img {
@@ -468,24 +468,25 @@ $shadow-text: 1px 1px 2px rgba(0, 0, 0, 0.8);
       position: absolute;
       top: 0;
       right: 0;
-      margin-top: -40px;
+      margin-top: -75px;
+      z-index: 5;
       margin-right: 10px;
       color: white;
       text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
       cursor: pointer;
-      transform: scale(4.5);
-      @include templateAnimasi(showAction);
+      font-size: 3em;
+      @include templateAnimation(showAction);
 
       &.closed {
-        @include templateAnimasi(closeAction);
+        @include templateAnimation(closeAction);
       }
     }
 
     img {
-      @include templateAnimasi(showImg);
+      @include templateAnimation(showImg);
 
       &.close {
-        @include templateAnimasi(closeImg);
+        @include templateAnimation(closeImg);
       }
     }
   }
@@ -500,16 +501,15 @@ $shadow-text: 1px 1px 2px rgba(0, 0, 0, 0.8);
     cursor: pointer;
 
     &.prev {
-      left: 20vw;
+      left: 15%;
     }
 
     &.next {
-      right: 20vw;
+      right: 15%;
     }
   }
 
   &.show-modal {
-    display: grid;
     @include flexItem(center, center);
   }
 }
@@ -520,19 +520,18 @@ $shadow-text: 1px 1px 2px rgba(0, 0, 0, 0.8);
   height: 100%;
   width: 100%;
   // background-color: $secondary-color-text;
-  background-color: rgb(207, 194, 157);
 
   .body-contact {
-    width: 80%;
+    width: 90%;
     margin: 30px 0;
     @include flexItem(center, center);
     flex-direction: column;
 
     .title {
       font-size: 2em;
-      margin-top: 50px;
+      margin-top: 100px;
       padding: 20px 0;
-      width: 50%;
+      width:55%;
       text-align: center;
 
       h4 {
@@ -552,14 +551,14 @@ $shadow-text: 1px 1px 2px rgba(0, 0, 0, 0.8);
 
     .subtitle {
       font-size: 1.1em;
-      width: 50%;
+      width:55%;
       text-align: center;
       color: #515960;
       margin: 20px 0;
     }
 
     .main-contact {
-      width: 50%;
+      width:55%;
 
       .form-error {
         width: 100%;
@@ -568,6 +567,12 @@ $shadow-text: 1px 1px 2px rgba(0, 0, 0, 0.8);
         text-align: start;
         color: white;
         font-size: 1em;
+        
+        ul {
+          li{
+            margin-top: 10px;
+          }
+        }
       }
 
       .form-error-fe {
@@ -587,7 +592,7 @@ $shadow-text: 1px 1px 2px rgba(0, 0, 0, 0.8);
       .form-succes {
         color: white;
         width: 100%;
-        background-color: rgb(143, 218, 29);
+        background-color: rgb(85, 142, 0);
         text-align: center;
         padding: 10px;
         font-size: 1.4em;
@@ -623,7 +628,8 @@ $shadow-text: 1px 1px 2px rgba(0, 0, 0, 0.8);
           border-radius: 10px;
           border: 0;
           font-size: 0.9em;
-          width: 100%;
+          min-width: 100%;
+          max-width: 100%;
           box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
           font-family: Arial, Helvetica, sans-serif;
         }
@@ -639,7 +645,7 @@ $shadow-text: 1px 1px 2px rgba(0, 0, 0, 0.8);
         button {
           width: 100%;
           height: 50px;
-          color: #c7c7c7;
+          color: #e7e7e7;
           background-color: #f95d31;
           border: none;
           border-radius: 30px;
@@ -652,9 +658,11 @@ $shadow-text: 1px 1px 2px rgba(0, 0, 0, 0.8);
 
           &.disable {
             cursor: not-allowed;
+            color: #c7c7c7;
+            background-color: #e4552d;
 
             &:hover {
-              background-color: #f95d31;
+              background-color: #e4552d;
             }
           }
         }
@@ -707,11 +715,11 @@ $shadow-text: 1px 1px 2px rgba(0, 0, 0, 0.8);
 
       &.slider {
         display: flex;
-        @include templateAnimasi(slider);
+        @include templateAnimation(slider);
       }
 
       &.closeSlider {
-        @include templateAnimasi(closeSlider);
+        @include templateAnimation(closeSlider);
       }
     }
 
@@ -724,7 +732,8 @@ $shadow-text: 1px 1px 2px rgba(0, 0, 0, 0.8);
       // background-color: salmon;
       span {
         width: 50px;
-        background-color: rgb(195, 195, 194);
+        background-color: rgb(207, 121, 0);
+        box-shadow: 0 0 1px rgba(0, 0, 0, 0.6);
         height: 4px;
         transition: 0.5s;
       }
@@ -799,6 +808,7 @@ $shadow-text: 1px 1px 2px rgba(0, 0, 0, 0.8);
 
   // Services
   .container-services {
+    gap: 50px;
     .body-services {
       grid-template-columns: repeat(2, 2fr);
       .card {
@@ -816,6 +826,30 @@ $shadow-text: 1px 1px 2px rgba(0, 0, 0, 0.8);
     grid-template-columns: repeat(2, minmax(200px, 2fr));
   }
 
+  .modal {
+    .modal-img {
+      .close-btn {
+        margin-top: -70px;
+        margin-right: 5px;
+        font-size: 4em;
+      }
+
+      img.showed {
+        transform: scale(0.8) !important;
+      }
+    }
+
+    .action {
+      &.prev {
+        left: 8%;
+      }
+
+      &.next {
+        right: 8%;
+      }
+    }
+  }
+
   // Contact
   .container-contact {
     height: 100vh;
@@ -827,6 +861,7 @@ $shadow-text: 1px 1px 2px rgba(0, 0, 0, 0.8);
       .title {
         font-size: 2.1em;
         width: 85%;
+        margin-top:180px ;
       }
 
       .subtitle {
@@ -880,11 +915,11 @@ $shadow-text: 1px 1px 2px rgba(0, 0, 0, 0.8);
 
       &.slider {
         display: flex;
-        @include templateAnimasi(slider);
+        @include templateAnimation(slider);
       }
 
       &.closeSlider {
-        @include templateAnimasi(closeSlider);
+        @include templateAnimation(closeSlider);
       }
     }
 
@@ -974,11 +1009,11 @@ $shadow-text: 1px 1px 2px rgba(0, 0, 0, 0.8);
 
   // Services
   .container-services {
-    height: 100%;
+    height: 500%;
     width: 100%;
     gap: 50px;
     margin-top: 0;
-    background-color: rgba(255, 255, 255, 0.889);
+    // background-color: rgba(255, 255, 255, 0.889);
 
     .header {
       font-size: 1.7em;
@@ -987,6 +1022,7 @@ $shadow-text: 1px 1px 2px rgba(0, 0, 0, 0.8);
 
     .body-services {
       margin-bottom: 50px;
+      padding-bottom: 200px;
       grid-template-columns: repeat(auto-fit, minmax(150px, 2.5fr));
 
       .card {
@@ -1011,8 +1047,17 @@ $shadow-text: 1px 1px 2px rgba(0, 0, 0, 0.8);
   .container-portfolio {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(6, minmax(200px, 2fr));
+    gap: 5px;
     padding-bottom: 15vh;
     height: 150%;
+  }
+
+  .modal {
+    display: none;
+
+    &.show-modal {
+      display: none;
+    }
   }
 
   // Contact
@@ -1028,6 +1073,7 @@ $shadow-text: 1px 1px 2px rgba(0, 0, 0, 0.8);
       .title {
         font-size: 1.8em;
         width: 90%;
+        margin-top: 20px;
       }
 
       .subtitle {

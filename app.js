@@ -69,12 +69,14 @@ app.post("/contact", [
         .notEmpty().withMessage("Please fill your message")
 ], async (req, res) => {
     const errors = validationResult(req);
+    const data = req.body;
     if (!errors.isEmpty()) {
         const dataError = errors.array();
         res.render("contact", {
             layout: "layouts/main-layout",
             title: "Glenn Rhee's | Contact Us",
-            dataError
+            dataError,
+            data
         })
     } else {
         try {

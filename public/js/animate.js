@@ -46,10 +46,9 @@ document.addEventListener("click", function (e) {
     const imgShow = document.querySelector(".showed");
     let dataI = imgShow.dataset.index;
     dataI = parseInt(dataI);
-    // console.log(dataI);
 
     if (e.target.classList.contains("close-btn")) {
-        const btnClose = document.querySelector(".close-btn")
+        const btnClose = document.querySelector(".close-btn");
         imgShow.classList.add("close");
         btnClose.classList.add("closed");
         setTimeout(() => {
@@ -82,7 +81,7 @@ const showImg = (index) => {
         next.style.display = "block";
     }
     return `    
-        <div class="close-btn">&times;</div>
+        <div class="close-btn">x</div>
         <img src="../assets/img/portfolio/fullsize/${index}.jpg" alt="" data-index="${index}" class="showed"/>
         `;
 
@@ -92,14 +91,14 @@ function toggleNext(index) {
     if (index + 1 === contentsImg.length) {
         next.style.display = "none";
         return `    
-        <div class="close-btn">&times;</div>
+        <div class="close-btn">x</div>
         <img src="../assets/img/portfolio/fullsize/${index + 1}.jpg" alt="" data-index="${index + 1}" class="showed"/>
         `;
     } else {
         next.style.display = "block";
         prev.style.display = "block";
         return `    
-        <div class="close-btn">&times;</div>
+        <div class="close-btn">x</div>
         <img src="../assets/img/portfolio/fullsize/${index + 1}.jpg" alt="" data-index="${index + 1}" class="showed"/>
         `;
     }
@@ -109,14 +108,14 @@ const togglePrev = (index) => {
     if (index - 1 === 1) {
         prev.style.display = "none";
         return `    
-        <div class="close-btn">&times;</div>
+        <div class="close-btn">x</div>
         <img src="../assets/img/portfolio/fullsize/${index - 1}.jpg" alt="" data-index="${index - 1}" class="showed"/>
         `;
     } else {
         next.style.display = "block";
         prev.style.display = "block";
         return `    
-        <div class="close-btn">&times;</div>
+        <div class="close-btn">x</div>
         <img src="../assets/img/portfolio/fullsize/${index - 1}.jpg" alt="" data-index="${index - 1}" class="showed"/>
         `;
     }

@@ -25,12 +25,58 @@
       <% } %>
 
       <form action="/contact" method="post" autocomplete="off" id="contact">
+        <% if (typeof data !== "undefined") { %>
+        <div class="input-group">
+          <div class="form-error-fe"><h5>Please fill your name</h5></div>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            value="<%= data.name %>"
+            placeholder="Your Name..."
+          />
+        </div>
+        <div class="input-group">
+          <div class="form-error-fe">
+            <h5>Please fill your email address</h5>
+          </div>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            value="<%= data.email %>"
+            placeholder="example@gmail.com"
+          />
+        </div>
+        <div class="input-group">
+          <input
+            type="tel"
+            name="phoneNumber"
+            id="noTelp"
+            value="<%= data.phoneNumber %>"
+            placeholder="Phone Number"
+          />
+        </div>
+        <div class="input-group">
+          <div class="form-error-fe"><h5>Please fill your message</h5></div>
+          <textarea
+            name="message"
+            id="message"
+            value="<%= data.message %>"
+            cols="20"
+            rows="10"
+            placeholder="Your message here..."
+          ></textarea>
+        </div>
+        <% } else { %>
         <div class="input-group">
           <div class="form-error-fe"><h5>Please fill your name</h5></div>
           <input type="text" name="name" id="name" placeholder="Your Name..." />
         </div>
         <div class="input-group">
-          <div class="form-error-fe"><h5>Please fill your email address</h5></div>
+          <div class="form-error-fe">
+            <h5>Please fill your email address</h5>
+          </div>
           <input
             type="email"
             name="email"
@@ -56,8 +102,11 @@
             placeholder="Your message here..."
           ></textarea>
         </div>
+        <% } %>
         <div class="submit-button">
-          <button type="submit" id="submit" class="disable" disabled>Submit</button>
+          <button type="submit" id="submit" class="disable" disabled>
+            Submit
+          </button>
         </div>
       </form>
     </div>

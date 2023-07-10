@@ -6,7 +6,7 @@
 }
 
 body {
-  background-color: rgb(71, 55, 55);
+  background-color: rgb(207, 194, 157);
   font-family: "Montserrat", sans-serif;
   font-size: 18px;
   overflow-x: hidden !important;
@@ -78,11 +78,25 @@ a {
 @keyframes showAction {
   0% {
     display: none;
+    transform: scale(1);
     opacity: 0;
   }
   100% {
     display: block;
+    transform: scale(1);
     opacity: 1;
+  }
+}
+@keyframes closeAction {
+  0% {
+    display: block;
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    display: none;
+    transform: scale(1);
+    opacity: 0;
   }
 }
 .navbar {
@@ -362,7 +376,7 @@ a {
   left: 0;
   right: 0;
   background-color: rgba(0, 0, 0, 0.5);
-  z-index: 999;
+  z-index: 4;
   display: none;
 }
 .modal .modal-img {
@@ -372,13 +386,21 @@ a {
   position: absolute;
   top: 0;
   right: 0;
-  margin-top: -40px;
+  margin-top: -75px;
+  z-index: 5;
   margin-right: 10px;
   color: white;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
   cursor: pointer;
-  transform: scale(4.5);
+  font-size: 3em;
   animation-name: showAction;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+.modal .modal-img .close-btn.closed {
+  animation-name: closeAction;
   animation-duration: 0.5s;
   animation-iteration-count: 1;
   animation-timing-function: ease-in-out;
@@ -408,13 +430,12 @@ a {
   cursor: pointer;
 }
 .modal .action.prev {
-  left: 20vw;
+  left: 15%;
 }
 .modal .action.next {
-  right: 20vw;
+  right: 15%;
 }
 .modal.show-modal {
-  display: grid;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -426,10 +447,9 @@ a {
   align-items: center;
   height: 100%;
   width: 100%;
-  background-color: rgb(207, 194, 157);
 }
 .container-contact .body-contact {
-  width: 80%;
+  width: 90%;
   margin: 30px 0;
   display: flex;
   justify-content: center;
@@ -438,9 +458,9 @@ a {
 }
 .container-contact .body-contact .title {
   font-size: 2em;
-  margin-top: 50px;
+  margin-top: 100px;
   padding: 20px 0;
-  width: 50%;
+  width: 55%;
   text-align: center;
 }
 .container-contact .body-contact .title h4 {
@@ -457,13 +477,13 @@ a {
 }
 .container-contact .body-contact .subtitle {
   font-size: 1.1em;
-  width: 50%;
+  width: 55%;
   text-align: center;
   color: #515960;
   margin: 20px 0;
 }
 .container-contact .body-contact .main-contact {
-  width: 50%;
+  width: 55%;
 }
 .container-contact .body-contact .main-contact .form-error {
   width: 100%;
@@ -472,6 +492,9 @@ a {
   text-align: start;
   color: white;
   font-size: 1em;
+}
+.container-contact .body-contact .main-contact .form-error ul li {
+  margin-top: 10px;
 }
 .container-contact .body-contact .main-contact .form-error-fe {
   width: 100%;
@@ -488,7 +511,7 @@ a {
 .container-contact .body-contact .main-contact .form-succes {
   color: white;
   width: 100%;
-  background-color: rgb(143, 218, 29);
+  background-color: rgb(85, 142, 0);
   text-align: center;
   padding: 10px;
   font-size: 1.4em;
@@ -521,7 +544,8 @@ a {
   border-radius: 10px;
   border: 0;
   font-size: 0.9em;
-  width: 100%;
+  min-width: 100%;
+  max-width: 100%;
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -535,7 +559,7 @@ a {
 .container-contact .body-contact .main-contact .submit-button button {
   width: 100%;
   height: 50px;
-  color: #c7c7c7;
+  color: #e7e7e7;
   background-color: #f95d31;
   border: none;
   border-radius: 30px;
@@ -547,9 +571,11 @@ a {
 }
 .container-contact .body-contact .main-contact .submit-button button.disable {
   cursor: not-allowed;
+  color: #c7c7c7;
+  background-color: #e4552d;
 }
 .container-contact .body-contact .main-contact .submit-button button.disable:hover {
-  background-color: #f95d31;
+  background-color: #e4552d;
 }
 
 @media (min-width: 993px) {
@@ -624,7 +650,8 @@ a {
   }
   .navbar .menu-toggle span {
     width: 50px;
-    background-color: rgb(195, 195, 194);
+    background-color: rgb(207, 121, 0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.6);
     height: 4px;
     transition: 0.5s;
   }
@@ -675,6 +702,9 @@ a {
     padding: 30px 25px;
     border-radius: 50px;
   }
+  .container-services {
+    gap: 50px;
+  }
   .container-services .body-services {
     grid-template-columns: repeat(2, 2fr);
   }
@@ -687,6 +717,20 @@ a {
   .container-portfolio {
     grid-template-columns: repeat(2, minmax(200px, 2fr));
   }
+  .modal .modal-img .close-btn {
+    margin-top: -70px;
+    margin-right: 5px;
+    font-size: 4em;
+  }
+  .modal .modal-img img.showed {
+    transform: scale(0.8) !important;
+  }
+  .modal .action.prev {
+    left: 8%;
+  }
+  .modal .action.next {
+    right: 8%;
+  }
   .container-contact {
     height: 100vh;
     width: 100vw;
@@ -697,6 +741,7 @@ a {
   .container-contact .body-contact .title {
     font-size: 2.1em;
     width: 85%;
+    margin-top: 180px;
   }
   .container-contact .body-contact .subtitle {
     width: 85%;
@@ -827,11 +872,10 @@ a {
     font-size: 1em;
   }
   .container-services {
-    height: 100%;
+    height: 500%;
     width: 100%;
     gap: 50px;
     margin-top: 0;
-    background-color: rgba(255, 255, 255, 0.889);
   }
   .container-services .header {
     font-size: 1.7em;
@@ -839,6 +883,7 @@ a {
   }
   .container-services .body-services {
     margin-bottom: 50px;
+    padding-bottom: 200px;
     grid-template-columns: repeat(auto-fit, minmax(150px, 2.5fr));
   }
   .container-services .body-services .card .header-services {
@@ -856,8 +901,15 @@ a {
   .container-portfolio {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(6, minmax(200px, 2fr));
+    gap: 5px;
     padding-bottom: 15vh;
     height: 150%;
+  }
+  .modal {
+    display: none;
+  }
+  .modal.show-modal {
+    display: none;
   }
   .container-contact {
     height: 100%;
@@ -871,6 +923,7 @@ a {
   .container-contact .body-contact .title {
     font-size: 1.8em;
     width: 90%;
+    margin-top: 20px;
   }
   .container-contact .body-contact .subtitle {
     width: 90%;
