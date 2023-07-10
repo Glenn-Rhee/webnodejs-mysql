@@ -18,17 +18,19 @@
           <% }) %>
         </ul>
       </div>
-      <% } %>
-      <% if(typeof message !== "undefined") {%>
+      <% } %> <% if(typeof message !== "undefined") {%>
       <div class="form-succes">
         <h4><%= message %></h4>
       </div>
       <% } %>
-      <form action="/contact" method="post" autocomplete="off">
+
+      <form action="/contact" method="post" autocomplete="off" id="contact">
         <div class="input-group">
+          <div class="form-error-fe"><h5>Please fill your name</h5></div>
           <input type="text" name="name" id="name" placeholder="Your Name..." />
         </div>
         <div class="input-group">
+          <div class="form-error-fe"><h5>Please fill your email address</h5></div>
           <input
             type="email"
             name="email"
@@ -45,6 +47,7 @@
           />
         </div>
         <div class="input-group">
+          <div class="form-error-fe"><h5>Please fill your message</h5></div>
           <textarea
             name="message"
             id="message"
@@ -54,7 +57,7 @@
           ></textarea>
         </div>
         <div class="submit-button">
-          <button type="submit">Submit</button>
+          <button type="submit" id="submit" class="disable" disabled>Submit</button>
         </div>
       </form>
     </div>

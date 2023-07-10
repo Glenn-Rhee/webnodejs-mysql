@@ -1,7 +1,7 @@
 const express = require("express");
 const path = require("path");
 const expressLayouts = require("express-ejs-layouts");
-const { check, validationResult } = require("express-validator");
+const { check, validationResult, body } = require("express-validator");
 const { addData, connection } = require("./data/db");
 const app = express();
 const port = 3000;
@@ -54,8 +54,19 @@ app.get("/contact", (req, res) => {
 
 // Melakukan sesuatu ke contact 
 app.post("/contact", [
-    check("phoneNumber", "Masukkan format no telpon yang benar").isMobilePhone("id-ID"),
-    check("email", "Masukkan format email yang benar").isEmail()
+    body("name")
+        .custom(value => {
+            if (value == '') {
+                throw new Error("Please fill your name")
+            }
+            return true
+        }),
+    body("phoneNumber")
+        .if((value) => value !== '')
+        .isMobilePhone("id-ID").withMessage("Please fill out your phone number properly"),
+    check("email", "Please fill out your e-mail address properly").isEmail(),
+    check("message")
+        .notEmpty().withMessage("Please fill your message")
 ], async (req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
@@ -76,14 +87,6 @@ app.post("/contact", [
             })
         } catch (err) {
             console.log(err);
-        } finally {
-            connection.end((err) => {
-                if (err) {
-                    console.log("Gagal ditutup ", err);
-                } else {
-                    console.log("Berhasil tutup");
-                }
-            });
         }
     }
 })

@@ -16,7 +16,7 @@ connection.connect((err) => {
 
 const addData = async (data) => {
     return new Promise((resolve, reject) => {
-        connection.query("INSERT INTO `gleen_rhee's` SET ?", data, (err, res) => {
+        connection.query("INSERT INTO `gleen_rhees` SET ?", data, (err, res) => {
             if (err) {
                 reject(err)
             } else {

@@ -360,6 +360,18 @@ a {
   color: white;
   font-size: 1em;
 }
+.container-contact .body-contact .main-contact .form-error-fe {
+  width: 100%;
+  background-color: transparent;
+  padding: 10px;
+  text-align: start;
+  color: red;
+  font-size: 1em;
+  display: none;
+}
+.container-contact .body-contact .main-contact .form-error-fe.error {
+  display: block;
+}
 .container-contact .body-contact .main-contact .form-succes {
   color: white;
   width: 100%;
@@ -380,6 +392,10 @@ a {
   border: 0;
   box-shadow: 0 0 2px 1px rgba(255, 72, 72, 0.395);
   outline: rgb(253, 175, 175);
+}
+.container-contact .body-contact .main-contact .input-group input.error {
+  border: 1px solid red;
+  box-shadow: none;
 }
 .container-contact .body-contact .main-contact .input-group textarea:focus {
   border: 0;
@@ -415,6 +431,12 @@ a {
 }
 .container-contact .body-contact .main-contact .submit-button button:hover {
   background-color: #bd310b;
+}
+.container-contact .body-contact .main-contact .submit-button button.disable {
+  cursor: not-allowed;
+}
+.container-contact .body-contact .main-contact .submit-button button.disable:hover {
+  background-color: #f95d31;
 }
 
 @media (min-width: 993px) {

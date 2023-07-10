@@ -457,7 +457,21 @@ $shadow-text: 1px 1px 2px rgba(0, 0, 0, 0.8);
         padding: 10px;
         text-align: start;
         color: white;
-        font-size: 1em;
+        font-size: 1em; 
+      }
+
+      .form-error-fe {
+        width: 100%;
+        background-color: transparent;
+        padding: 10px;
+        text-align: start;
+        color: red;
+        font-size: 1em; 
+        display: none;
+
+        &.error {
+          display: block;
+        }
       }
 
       .form-succes {
@@ -479,6 +493,11 @@ $shadow-text: 1px 1px 2px rgba(0, 0, 0, 0.8);
 
           &:focus {
             @include inputFocus();
+          }
+
+          &.error {
+            border: 1px solid red;
+            box-shadow: none;
           }
         }
 
@@ -519,6 +538,14 @@ $shadow-text: 1px 1px 2px rgba(0, 0, 0, 0.8);
 
           &:hover {
             background-color: darken($color: #f4623a, $amount: 20%);
+          }
+
+          &.disable {
+            cursor:not-allowed;
+
+            &:hover {
+              background-color: #f95d31;
+            }
           }
         }
       }
