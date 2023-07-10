@@ -1,0 +1,112 @@
+body {
+  background-color: rgb(193, 193, 193);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container-error {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+.container-error .main {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+}
+.container-error .main p {
+  color: rgb(69, 69, 69);
+}
+.container-error .main a button {
+  background-color: rgb(234, 160, 22);
+  border: none;
+  outline: none;
+  color: white;
+  cursor: pointer;
+}
+.container-error .main a button:hover {
+  background-color: #bc8011;
+}
+
+@media screen and (min-width: 1024px) {
+  .container-error .main {
+    width: 50%;
+    height: 50%;
+    padding: 20px;
+    border-radius: 30px;
+    gap: 20px;
+  }
+  .container-error .main h1 {
+    font-size: 4.5em;
+  }
+  .container-error .main p {
+    font-size: 1.5em;
+    margin-top: 20px;
+  }
+  .container-error .main a button {
+    padding: 10px 20px;
+    font-size: 1.6em;
+    border-radius: 20px;
+  }
+  .container-error .main a button:hover {
+    background-color: #bc8011;
+  }
+}
+@media screen and (min-width: 767px) and (max-width: 1023px) {
+  .container-error .main {
+    width: 60%;
+    height: 40%;
+    padding: 40px;
+    border-radius: 30px;
+    gap: 20px;
+  }
+  .container-error .main h1 {
+    font-size: 4em;
+  }
+  .container-error .main p {
+    font-size: 1.7em;
+    text-align: center;
+    margin-top: 20px;
+  }
+  .container-error .main a button {
+    padding: 15px 30px;
+    font-size: 1.8em;
+    border-radius: 25px;
+  }
+  .container-error .main a button:hover {
+    background-color: #bc8011;
+  }
+}
+@media screen and (max-width: 766px) {
+  .container-error .main {
+    width: 80%;
+    height: 45%;
+    padding: 15px;
+    border-radius: 30px;
+    gap: 5px;
+  }
+  .container-error .main h1 {
+    font-size: 2.4em;
+  }
+  .container-error .main p {
+    font-size: 1.1em;
+    text-align: center;
+    margin-top: 20px;
+  }
+  .container-error .main a button {
+    padding: 10px 20px;
+    font-size: 1.4em;
+    border-radius: 20px;
+  }
+  .container-error .main a button:hover {
+    background-color: #bc8011;
+  }
+}/*# sourceMappingURL=error.css.map */

@@ -1,7 +1,7 @@
 const express = require("express");
 const path = require("path");
 const expressLayouts = require("express-ejs-layouts");
-const { check, validationResult, body } = require("express-validator");
+const { check, validationResult } = require("express-validator");
 const { addData, connection } = require("./data/db");
 const app = express();
 const port = 3000;
@@ -72,13 +72,13 @@ app.post("/contact", [
             res.render("contact", {
                 layout: "layouts/main-layout",
                 title: "Glenn Rhee's | Contact Us",
-                message: "Thank You for your messages :)"    
+                message: "Thank You for your messages :)"
             })
-        } catch(err){
+        } catch (err) {
             console.log(err);
         } finally {
-            connection.end((err)=>{
-                if(err) {
+            connection.end((err) => {
+                if (err) {
                     console.log("Gagal ditutup ", err);
                 } else {
                     console.log("Berhasil tutup");
@@ -89,7 +89,9 @@ app.post("/contact", [
 })
 
 app.use((req, res, next) => {
-    res.status(404).send("Halaman tidak ditemukan");
+    res.status(404).render("404", {
+        layout: "layouts/layout-404"
+    })
     next();
 })
 
