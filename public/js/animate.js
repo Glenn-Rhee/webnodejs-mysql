@@ -49,7 +49,14 @@ document.addEventListener("click", function (e) {
     // console.log(dataI);
 
     if (e.target.classList.contains("close-btn")) {
-        modal.classList.remove("show-modal");
+        const btnClose = document.querySelector(".close-btn")
+        imgShow.classList.add("close");
+        btnClose.classList.add("closed");
+        setTimeout(() => {
+            btnClose.classList.remove("closed");
+            imgShow.classList.remove("close");
+            modal.classList.remove("show-modal");
+        }, 500);
     }
 
     if (e.target.classList.contains("next")) {
@@ -76,7 +83,7 @@ const showImg = (index) => {
     }
     return `    
         <div class="close-btn">&times;</div>
-        <img src="../assets/img/portfolio/thumbnails/${index}.jpg" alt="" data-index="${index}" class="showed"/>
+        <img src="../assets/img/portfolio/fullsize/${index}.jpg" alt="" data-index="${index}" class="showed"/>
         `;
 
 }
@@ -86,14 +93,14 @@ function toggleNext(index) {
         next.style.display = "none";
         return `    
         <div class="close-btn">&times;</div>
-        <img src="../assets/img/portfolio/thumbnails/${index + 1}.jpg" alt="" data-index="${index + 1}" class="showed"/>
+        <img src="../assets/img/portfolio/fullsize/${index + 1}.jpg" alt="" data-index="${index + 1}" class="showed"/>
         `;
     } else {
         next.style.display = "block";
         prev.style.display = "block";
         return `    
         <div class="close-btn">&times;</div>
-        <img src="../assets/img/portfolio/thumbnails/${index + 1}.jpg" alt="" data-index="${index + 1}" class="showed"/>
+        <img src="../assets/img/portfolio/fullsize/${index + 1}.jpg" alt="" data-index="${index + 1}" class="showed"/>
         `;
     }
 }
@@ -103,14 +110,14 @@ const togglePrev = (index) => {
         prev.style.display = "none";
         return `    
         <div class="close-btn">&times;</div>
-        <img src="../assets/img/portfolio/thumbnails/${index - 1}.jpg" alt="" data-index="${index - 1}" class="showed"/>
+        <img src="../assets/img/portfolio/fullsize/${index - 1}.jpg" alt="" data-index="${index - 1}" class="showed"/>
         `;
     } else {
         next.style.display = "block";
         prev.style.display = "block";
         return `    
         <div class="close-btn">&times;</div>
-        <img src="../assets/img/portfolio/thumbnails/${index - 1}.jpg" alt="" data-index="${index - 1}" class="showed"/>
+        <img src="../assets/img/portfolio/fullsize/${index - 1}.jpg" alt="" data-index="${index - 1}" class="showed"/>
         `;
     }
 }

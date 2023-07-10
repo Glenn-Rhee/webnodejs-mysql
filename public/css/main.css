@@ -51,6 +51,40 @@ a {
     opacity: 0;
   }
 }
+@keyframes showImg {
+  0% {
+    display: none;
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    display: grid;
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes closeImg {
+  0% {
+    display: grid;
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    display: none;
+    transform: scale(0.5);
+    opacity: 0;
+  }
+}
+@keyframes showAction {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+  100% {
+    display: block;
+    opacity: 1;
+  }
+}
 .navbar {
   display: flex;
   justify-content: space-around;
@@ -330,7 +364,6 @@ a {
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 999;
   display: none;
-  transition: 1s;
 }
 .modal .modal-img {
   position: relative;
@@ -345,6 +378,25 @@ a {
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
   cursor: pointer;
   transform: scale(4.5);
+  animation-name: showAction;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+.modal .modal-img img {
+  animation-name: showImg;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+.modal .modal-img img.close {
+  animation-name: closeImg;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
 }
 .modal .action {
   position: absolute;

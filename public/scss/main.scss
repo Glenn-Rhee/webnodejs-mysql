@@ -79,7 +79,7 @@ $shadow-text: 1px 1px 2px rgba(0, 0, 0, 0.8);
   background-color: rgba(255, 255, 255, 0.905);
 }
 
-@mixin templateSlider($nameAnima) {
+@mixin templateAnimasi($nameAnima) {
   animation-name: $nameAnima;
   animation-duration: 0.5s;
   animation-iteration-count: 1;
@@ -113,6 +113,12 @@ $shadow-text: 1px 1px 2px rgba(0, 0, 0, 0.8);
   outline: rgb(253, 175, 175);
 }
 
+@mixin templateAnimateShowed($display, $scale, $opacity) {
+  display: $display;
+  transform: scale($scale);
+  opacity: $opacity;
+}
+
 // Animasi
 @keyframes slider {
   0% {
@@ -131,6 +137,46 @@ $shadow-text: 1px 1px 2px rgba(0, 0, 0, 0.8);
 
   100% {
     @include templateAnimasi(150px, none, 0);
+  }
+}
+
+@keyframes showImg {
+  0% {
+    @include templateAnimateShowed(none, 0.5, 0);
+  }
+
+  100% {
+    @include templateAnimateShowed(grid, 1, 1);
+  }
+}
+
+@keyframes closeImg {
+  0% {
+    @include templateAnimateShowed(grid, 1, 1);
+  }
+
+  100% {
+    @include templateAnimateShowed(none, 0.5, 0);
+  }
+}
+
+@keyframes showAction {
+  0% {
+    @include templateAnimateShowed(none, 1, 0);
+  }
+
+  100% {
+    @include templateAnimateShowed(block, 1, 1);
+  }
+}
+
+@keyframes closeAction {
+  0% {
+    @include templateAnimateShowed(block, 1, 1);
+  }
+
+  100% {
+    @include templateAnimateShowed(none, 1, 0);
   }
 }
 
@@ -414,7 +460,6 @@ $shadow-text: 1px 1px 2px rgba(0, 0, 0, 0.8);
   background-color: rgba($color: #000000, $alpha: 0.5);
   z-index: 999;
   display: none;
-  transition: 1s;
 
   .modal-img {
     position: relative;
@@ -429,6 +474,19 @@ $shadow-text: 1px 1px 2px rgba(0, 0, 0, 0.8);
       text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
       cursor: pointer;
       transform: scale(4.5);
+      @include templateAnimasi(showAction);
+
+      &.closed {
+        @include templateAnimasi(closeAction);
+      }
+    }
+
+    img {
+      @include templateAnimasi(showImg);
+
+      &.close {
+        @include templateAnimasi(closeImg);
+      }
     }
   }
 
@@ -649,11 +707,11 @@ $shadow-text: 1px 1px 2px rgba(0, 0, 0, 0.8);
 
       &.slider {
         display: flex;
-        @include templateSlider(slider);
+        @include templateAnimasi(slider);
       }
 
       &.closeSlider {
-        @include templateSlider(closeSlider);
+        @include templateAnimasi(closeSlider);
       }
     }
 
@@ -822,11 +880,11 @@ $shadow-text: 1px 1px 2px rgba(0, 0, 0, 0.8);
 
       &.slider {
         display: flex;
-        @include templateSlider(slider);
+        @include templateAnimasi(slider);
       }
 
       &.closeSlider {
-        @include templateSlider(closeSlider);
+        @include templateAnimasi(closeSlider);
       }
     }
 
